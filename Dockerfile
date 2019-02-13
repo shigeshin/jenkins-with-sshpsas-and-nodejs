@@ -8,6 +8,7 @@ RUN apt-get update -y \
 RUN apt-get install -y git curl vim sudo apt-utils
 RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 RUN apt-get install -y nodejs
+RUN apt-get install -y google-chrome-stable
 RUN rm -rf /var/lib/apt/lists/*
 
 USER jenkins
