@@ -34,7 +34,7 @@ RUN unzip NotoSansCJKjp-hinted.zip && \
 
 WORKDIR /
 
-RUN rm -rf /noto
+# RUN rm -rf /noto
 
 RUN rm -rf /var/lib/apt/lists/*
 
