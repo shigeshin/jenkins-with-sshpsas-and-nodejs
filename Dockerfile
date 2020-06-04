@@ -22,6 +22,7 @@ RUN mkdir -p /usr/share/fonts/truetype/msfonts && \
     chmod 777 -R /usr/share/fonts/truetype/noto/ && \
     fc-cache -fv
 
+# Delete Work Dir
 RUN rm -rf /var/lib/apt/lists/*
 
 USER jenkins
