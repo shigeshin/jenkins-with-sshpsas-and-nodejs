@@ -17,24 +17,10 @@ apt-get update && \
 apt-get install -yq google-chrome-stable
 
 # Install Japanese Font
-RUN apt-get update -y \
-&& apt-get install -y ttf-freefont
-
-RUN mkdir /noto
-
-ADD https://noto-website.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip /noto
-
-WORKDIR /noto
-
-RUN unzip NotoSansCJKjp-hinted.zip && \
-    mkdir -p /usr/share/fonts/truetype/noto && \
-    cp *.otf /usr/share/fonts/truetype/noto && \
-    chmod 644 -R /usr/share/fonts/truetype/noto/ && \
+RUN mkdir -p /usr/share/fonts/truetype/msfonts && \
+    cp /var/jenkins_home/msfonts/* /usr/share/fonts/truetype/msfonts && \
+    chmod 777 -R /usr/share/fonts/truetype/noto/ && \
     fc-cache -fv
-
-WORKDIR /
-
-RUN rm -rf /noto
 
 RUN rm -rf /var/lib/apt/lists/*
 
