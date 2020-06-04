@@ -16,12 +16,6 @@ sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
 apt-get update && \
 apt-get install -yq google-chrome-stable
 
-# Install Japanese Font
-RUN mkdir -p /usr/share/fonts/truetype/msfonts && \
-    cp /var/jenkins_home/msfonts/* /usr/share/fonts/truetype/msfonts && \
-    chmod 777 -R /usr/share/fonts/truetype/msfonts/ && \
-    fc-cache -fv
-
 # Delete Work Dir
 RUN rm -rf /var/lib/apt/lists/*
 
