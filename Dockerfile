@@ -17,11 +17,9 @@ apt-get update && \
 apt-get install -yq google-chrome-stable && \
 apt-get --only-upgrade install -yq google-chrome-stable
 
-ARG FIREFOX_VERSION=79.0
-RUN \
-    add-pkg --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-            --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-            --upgrade firefox=${FIREFOX_VERSION}
+# Install FireFox
+RUN apt-get update && \
+apt-get install -y firefox-esr
 
 # Delete Work Dir
 RUN rm -rf /var/lib/apt/lists/*
