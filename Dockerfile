@@ -17,6 +17,11 @@ apt-get update && \
 apt-get install -yq google-chrome-stable && \
 apt-get --only-upgrade install -yq google-chrome-stable
 
+# Install FireFox
+apt-get update && \
+apt-get install -yq firefox && \
+apt-get --only-upgrade install -yq firefox
+
 # Delete Work Dir
 RUN rm -rf /var/lib/apt/lists/*
 
