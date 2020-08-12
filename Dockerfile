@@ -18,7 +18,8 @@ apt-get install -yq google-chrome-stable && \
 apt-get --only-upgrade install -yq google-chrome-stable
 
 ARG FIREFOX_VERSION=79.0
-RUN apt-get update -qqy \
+RUN apt-get remove iceweasel \
+  && apt-get update -qqy \
   && apt-get -qqy --no-install-recommends install firefox \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/* \
   && wget --no-verbose -O /tmp/firefox.tar.bz2 https://download-installer.cdn.mozilla.net/pub/firefox/releases/$FIREFOX_VERSION/linux-x86_64/en-US/firefox-$FIREFOX_VERSION.tar.bz2 \
