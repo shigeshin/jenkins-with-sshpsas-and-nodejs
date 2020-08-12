@@ -19,7 +19,7 @@ apt-get --only-upgrade install -yq google-chrome-stable
 
 # Install FireFox
 RUN apt-get update && \
-apt-get install -y firefox
+apt-get -y install bzip2 wget firefox language-pack-ja fonts-ipafont-gothic fonts-ipafont-mincho
 
 # Delete Work Dir
 RUN rm -rf /var/lib/apt/lists/*
