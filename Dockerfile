@@ -19,7 +19,7 @@ apt-get --only-upgrade install -yq google-chrome-stable
 
 # Install FireFox
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211F && \
-apt-add-repository "deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic main" && \
+sh -c 'echo "deb http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu bionic main" >> /etc/apt/sources.list.d/firefox.list' && \
 apt-get update && \
 apt-get install -yq firefox && \
 apt-get --only-upgrade install -yq firefox
