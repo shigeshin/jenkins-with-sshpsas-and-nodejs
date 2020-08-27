@@ -21,6 +21,10 @@ apt-get --only-upgrade install -yq google-chrome-stable
 RUN apt-get update && \
 apt-get install -y firefox-esr
 
+# Install nmap Command
+RUN apt-get update && \
+apt-get install -y nmap
+
 # Delete Work Dir
 RUN rm -rf /var/lib/apt/lists/*
 
