@@ -25,6 +25,10 @@ apt-get install -y firefox-esr
 RUN apt-get update && \
 apt-get install -y nmap
 
+ADD StartupWireMock.sh /var/jenkins_home/WireMock/StartupWireMock.sh
+RUN chmod +x /var/jenkins_home/WireMock/StartupWireMock.sh
+CMD ["/var/jenkins_home/WireMock/StartupWireMock.sh"]
+
 # Delete Work Dir
 RUN rm -rf /var/lib/apt/lists/*
 
